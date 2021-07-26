@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".Profile"
+    android:background="#F5F5F5"
+    >
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <ImageView
+        android:id="@+id/addPhoto"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_add_a_photo_24"
+        android:adjustViewBounds="true"
+        android:layout_above="@+id/cardview"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/btn_Settings"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:drawableStart="@drawable/ic_baseline_settings_24">
+
+
+    </Button>
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#F5F5F5"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/Firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Salaheddine"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/Lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Zeroual"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/Height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="170cm"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/Weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="68kg"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/BMI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="BMI 23.5"
+                android:textColor="#007AAF"
+                android:textColorHint="#008000"
+                android:layout_marginTop="30dp"
+                />
+
+            <Button
+                android:id="@+id/btn_Save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Save"
+                android:background="#007AAF"
+                android:textColor="@color/white"
+                >
+            </Button>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <FrameLayout
+        android:id="@+id/fl_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="#007AAF"
+        app:itemTextColor="#007AAF"
+        app:menu="@menu/bottom_navbar"/>
+
+</RelativeLayout>

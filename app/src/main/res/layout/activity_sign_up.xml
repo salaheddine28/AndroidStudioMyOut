@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#F5F5F5"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/toolbar"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/SignUp_FirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Salaheddine"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/SignUp_LastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Zeroual"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/SignUp_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Salah.zeroual@OUTLOOK;COM"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/SignUp_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="*******"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/SignUp_Height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="170"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/SignUp_Weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="68kg"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/SignUp_Gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Male"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:padding="10dp"
+                android:id="@+id/Birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="28/03/1999"
+                android:textColor="#007AAF"
+                android:textColorHint="#7A8089"
+                android:layout_marginTop="30dp"/>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/SignUp_btn_SignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Sign up"
+                    android:background="#007AAF"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="15dp"
+                    android:width="150dp"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/SignUp_btn_GoBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Go back"
+                    android:background="#007AAF"
+                    android:textColor="@color/white"
+                    android:width="150dp"
+                    >
+                </Button>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
