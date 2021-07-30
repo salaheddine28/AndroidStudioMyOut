@@ -8,9 +8,16 @@
     android:background="#F5F5F5"
     >
 
+
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
+        app:itemIconTint="#007AAF"
+        app:itemTextColor="#007AAF"
+        app:menu="@menu/top_choose_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         />
 
     <TextView
@@ -19,7 +26,7 @@
         android:layout_above="@+id/cardview"
         android:text="Plank"
         android:gravity="center"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:textSize="30dp"
         android:textStyle="bold"
         android:textColor="#007AAF"/>
@@ -45,59 +52,85 @@
             android:padding="16dp">
 
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:background="@drawable/border"
-                android:padding="10dp"
-                android:id="@+id/PauseTimeInput"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="01:30"
-                android:gravity="center"
-                android:textColor="#007AAF"
-                android:textColorHint="#7A8089" />
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:padding="10dp"
+                    android:id="@+id/textView_counter"
+                    android:gravity="center"
+                    android:textColor="#007AAF"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="01:00"
+                    android:textSize="70sp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+                    android:id="@+id/progress_countdown"
+                    android:minWidth="267dp"
+                    android:minHeight="267dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    android:indeterminateTintMode="src_atop"
+                    android:indeterminateTint="#007AAF"
+                    style="@style/Widget.MaterialProgressBar.ProgressBar"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <Button
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btn_StartPlank"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Start"
-                    android:width="150dp"
-                    android:background="#007AAF"
-                    android:textColor="@color/white"
-                    android:layout_marginHorizontal="15dp"
+                    android:backgroundTint="#007AAF"
+                    android:src="@drawable/ic_play"
+                    android:layout_margin="10dp"/>
 
-                    />
-
-                <Button
-                    android:id="@+id/btn_RestartPlank"
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_PausePlank"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Restart"
-                    android:background="#007AAF"
-                    android:textColor="@color/white"
-                    android:width="150dp"
-                    android:layout_marginRight="10dp"
-
+                    android:backgroundTint="#007AAF"
+                    android:src="@drawable/ic_pause"
+                    android:layout_margin="10dp"
                     />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_StopPlank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#007AAF"
+                    android:src="@drawable/ic_stop" />
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_FinishPlank"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Finish"
-                android:background="#007AAF"
-                android:textColor="@color/white"
-                />
+
 
 
 
@@ -112,18 +145,15 @@
                 >
             </Button>
 
+            <FrameLayout
+                android:id="@+id/fl_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-
-
-    <FrameLayout
-        android:id="@+id/fl_wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"
-        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

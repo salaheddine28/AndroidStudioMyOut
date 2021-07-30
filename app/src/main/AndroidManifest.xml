@@ -9,9 +9,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyOut">
-        <activity android:name=".SignUp"
+
+        <activity android:name=".SetTimer"
+            android:theme="@style/NoActionBarTheme">
+
+        </activity>
+
+        <receiver
+            android:name=".TimerNotificationActionReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="stop" />
+                <action android:name="pause" />
+                <action android:name="resume" />
+                <action android:name="start" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".TimerExpiredReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".SignUp"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme"/>
+            android:theme="@style/NoActionBarTheme" />
         <activity
             android:name=".Charts"
             android:screenOrientation="portrait"
@@ -39,7 +62,13 @@
         <activity
             android:name=".Plank"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme" />
+            android:theme="@style/NoActionBarTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ChoosePlankWallSit"
             android:screenOrientation="portrait"
