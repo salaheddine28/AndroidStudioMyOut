@@ -16,6 +16,14 @@ class PushUpDetail : AppCompatActivity() {
 
     lateinit var option : Spinner
 
+    var noOfSets = "0"
+    var s1 = "0"
+    var s2 = "0"
+    var s3 = "0"
+    var s4 = "0"
+    var s5 = "0"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_push_up_detail)
@@ -46,6 +54,7 @@ class PushUpDetail : AppCompatActivity() {
                     set4tv.isVisible = false
                     set5.isVisible = false
                     set5tv.isVisible = false
+                    noOfSets = "1"
                 }
                 if (options[p2] == "2 sets")
                 {
@@ -59,6 +68,7 @@ class PushUpDetail : AppCompatActivity() {
                     set4tv.isVisible = false
                     set5.isVisible = false
                     set5tv.isVisible = false
+                    noOfSets = "2"
                 }
                 if (options[p2] == "3 sets")
                 {
@@ -72,6 +82,7 @@ class PushUpDetail : AppCompatActivity() {
                     set4tv.isVisible = false
                     set5.isVisible = false
                     set5tv.isVisible = false
+                    noOfSets = "3"
                 }
                 if (options[p2] == "4 sets")
                 {
@@ -85,6 +96,7 @@ class PushUpDetail : AppCompatActivity() {
                     set4tv.isVisible = true
                     set5.isVisible = false
                     set5tv.isVisible = false
+                    noOfSets = "4"
                 }
                 if (options[p2] == "5 sets")
                 {
@@ -98,6 +110,7 @@ class PushUpDetail : AppCompatActivity() {
                     set4tv.isVisible = true
                     set5.isVisible = true
                     set5tv.isVisible = true
+                    noOfSets = "5"
                 }
 
             }
@@ -114,6 +127,86 @@ class PushUpDetail : AppCompatActivity() {
         btn_Start.setOnClickListener{
 
             val intent = Intent(this, PushUp::class.java)
+            intent.putExtra("noOfSets", noOfSets)
+
+/*
+            if (noOfSets == "1")
+            {
+                s1 = set1.text.toString()
+
+                intent.putExtra("s1", s1)
+                intent.putExtra("s2", 0)
+                intent.putExtra("s3", 0)
+                intent.putExtra("s4", 0)
+                intent.putExtra("s5", 0)
+            }
+*/
+
+
+            if (noOfSets == "1")
+            {
+                s1 = set1.text.toString()
+
+                intent.putExtra("s1", s1)
+                intent.putExtra("s2", 0)
+                intent.putExtra("s3", 0)
+                intent.putExtra("s4", 0)
+                intent.putExtra("s5", 0)
+            }
+            if (noOfSets == "2")
+            {
+
+                s1 = set1.text.toString()
+                s2 = set2.text.toString()
+
+                intent.putExtra("s1", s1)
+                intent.putExtra("s2", s2)
+                intent.putExtra("s3", 0)
+                intent.putExtra("s4", 0)
+                intent.putExtra("s5", 0)
+            }
+            if (noOfSets == "3")
+            {
+
+                s1 = set1.text.toString()
+                s2 = set2.text.toString()
+                s3 = set3.text.toString()
+
+                intent.putExtra("s1", s1)
+                intent.putExtra("s2", s2)
+                intent.putExtra("s3", s3)
+                intent.putExtra("s4", 0)
+                intent.putExtra("s5", 0)
+            }
+            if (noOfSets == "4")
+            {
+
+                s1 = set1.text.toString()
+                s2 = set2.text.toString()
+                s3 = set3.text.toString()
+                s4 = set4.text.toString()
+
+                intent.putExtra("s1", s1)
+                intent.putExtra("s2", s2)
+                intent.putExtra("s3", s3)
+                intent.putExtra("s4", s4)
+                intent.putExtra("s5", 0)
+            }
+            if (noOfSets == "5")
+            {
+
+                s1 = set1.text.toString()
+                s2 = set2.text.toString()
+                s3 = set3.text.toString()
+                s4 = set4.text.toString()
+                s5 = set5.text.toString()
+                intent.putExtra("s1", s1)
+                intent.putExtra("s2", s2)
+                intent.putExtra("s3", s3)
+                intent.putExtra("s4", s4)
+                intent.putExtra("s5", s5)
+            }
+
             startActivity(intent)
             finish()
         }

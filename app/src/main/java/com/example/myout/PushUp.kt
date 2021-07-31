@@ -9,22 +9,30 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_push_up_detail.*
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 class PushUp : AppCompatActivity() {
 
+    var s1 = 0
+    var s2 = 0
+    var s3 = 0
+    var s4 = 0
+    var s5 = 0
+
 
 
     private val SetArray = arrayOf<Int>(15, 23, 51, 22, 13)
 
-    var noOfSets = 3;
+    var noOfSets = 0
+
 
     var started1 = false;
     var started2 = false;
     var started3 = false;
     var started4 = false;
-    var started5 = false;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +41,17 @@ class PushUp : AppCompatActivity() {
         //bottomNavigation.setSelectedItemId(R.id.home)
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
 
+        noOfSets = intent.getStringExtra("noOfSets").toString().toInt()
 
         var btn = findViewById<Button>(R.id.PushUpButton)
 
-        btn.text = SetArray[0].toString()
+        s1 = intent.getStringExtra("s1").toString().toInt()
+        s2 = intent.getStringExtra("s2").toString().toInt()
+/*        s3 = intent.getStringExtra("s3").toString().toInt()
+        s4 = intent.getStringExtra("s4").toString().toInt()
+        s5 = intent.getStringExtra("s5").toString().toInt()*/
+
+        btn.text = s1.toString()
 
 
 
