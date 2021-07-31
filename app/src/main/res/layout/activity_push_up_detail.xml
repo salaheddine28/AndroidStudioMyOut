@@ -28,63 +28,162 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         >
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="592dp"
             android:gravity="center"
+            android:orientation="vertical"
             android:padding="16dp">
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
-                android:text="Personalise your push up series"
-                android:textColor="@color/black"
-                android:gravity="center"
                 android:layout_marginBottom="10dp"
-                />
-
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:background="@drawable/border"
-                    android:id="@+id/NrOfSetsInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="number of sets"
-                    android:gravity="center"
-                    android:textColor="#363A43"
-                    android:textColorHint="#7A8089"
-                    android:padding="10dp"
-                    />
-
-
-
-
+                android:gravity="center"
+                android:text="Personalise your push up"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textView4"
+                android:layout_width="189dp"
+                android:layout_height="wrap_content"
+                android:text="Choose your number of sets" />
+
+            <Spinner
+                android:id="@+id/sp_option"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/set1tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:text="Pause time after each set"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"
-                />
+                android:text="First set"
+                android:textColor="@color/black"
+                android:visibility="gone" />
 
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:background="@drawable/border"
-                    android:padding="10dp"
-                    android:id="@+id/PauseTimeInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="00:30"
-                    android:gravity="center"
-                    android:textColor="#363A43"
-                    android:textColorHint="#7A8089" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/set1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="number of pushups"
+                android:padding="3dp"
+                android:textColor="#363A43"
+                android:textColorHint="#7A8089"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/set2tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Second set"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/set2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="number of pushups"
+                android:padding="3dp"
+                android:textColor="#363A43"
+                android:textColorHint="#7A8089"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/set3tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Third set"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/set3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="number of pushups"
+                android:padding="3dp"
+                android:textColor="#363A43"
+                android:textColorHint="#7A8089"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/set4tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Fourth set"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/set4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="number of pushups"
+                android:padding="3dp"
+                android:textColor="#363A43"
+                android:textColorHint="#7A8089"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/set5tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Fifth set"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/set5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:hint="number of pushups"
+                android:padding="3dp"
+                android:textColor="#363A43"
+                android:textColorHint="#7A8089"
+                android:visibility="gone" />
 
 
             <Button
@@ -92,36 +191,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="#007AAF"
                 android:text="Start"
-                android:background="#007AAF"
-                android:textColor="@color/white"
-                >
+                android:textColor="@color/white">
 
             </Button>
 
 
-            <Button
-                android:id="@+id/btn_instructions"
+            <FrameLayout
+                android:id="@+id/fl_wrapper"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Instructions"
-                android:background="#007AAF"
-                android:textColor="@color/white"
-                >
-            </Button>
+                android:layout_height="80dp">
+
+                <Button
+                    android:id="@+id/btn_instructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="#007AAF"
+                    android:text="Instructions"
+                    android:textColor="@color/white"></Button>
+            </FrameLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-
-    <FrameLayout
-        android:id="@+id/fl_wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"
-        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -132,4 +227,5 @@
         app:itemIconTint="#007AAF"
         app:itemTextColor="#007AAF"
         app:menu="@menu/bottom_navbar"/>
+
 </RelativeLayout>

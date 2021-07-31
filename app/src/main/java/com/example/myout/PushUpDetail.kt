@@ -3,15 +3,109 @@ package com.example.myout
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
+import android.widget.*
+import androidx.core.view.isVisible
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_push_up_detail.*
 
 class PushUpDetail : AppCompatActivity() {
+
+    lateinit var option : Spinner
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_push_up_detail)
+
+        val options = arrayOf("1 set", "2 sets", "3 sets", "4 sets", "5 sets")
+
+        option = findViewById<Spinner>(R.id.sp_option)
+
+        option.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,options)
+
+        option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?)
+            {
+
+            }
+
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+
+
+                if (options[p2] == "1 set")
+                { set1.isVisible = true
+                    set1tv.isVisible = true
+                    set2.isVisible = false
+                    set2tv.isVisible = false
+                    set3.isVisible = false
+                    set3tv.isVisible = false
+                    set4.isVisible = false
+                    set4tv.isVisible = false
+                    set5.isVisible = false
+                    set5tv.isVisible = false
+                }
+                if (options[p2] == "2 sets")
+                {
+                    set1.isVisible = true
+                    set1tv.isVisible = true
+                    set2.isVisible = true
+                    set2tv.isVisible = true
+                    set3.isVisible = false
+                    set3tv.isVisible = false
+                    set4.isVisible = false
+                    set4tv.isVisible = false
+                    set5.isVisible = false
+                    set5tv.isVisible = false
+                }
+                if (options[p2] == "3 sets")
+                {
+                    set1.isVisible = true
+                    set1tv.isVisible = true
+                    set2.isVisible = true
+                    set2tv.isVisible = true
+                    set3.isVisible = true
+                    set3tv.isVisible = true
+                    set4.isVisible = false
+                    set4tv.isVisible = false
+                    set5.isVisible = false
+                    set5tv.isVisible = false
+                }
+                if (options[p2] == "4 sets")
+                {
+                    set1.isVisible = true
+                    set1tv.isVisible = true
+                    set2.isVisible = true
+                    set2tv.isVisible = true
+                    set3.isVisible = true
+                    set3tv.isVisible = true
+                    set4.isVisible = true
+                    set4tv.isVisible = true
+                    set5.isVisible = false
+                    set5tv.isVisible = false
+                }
+                if (options[p2] == "5 sets")
+                {
+                    set1.isVisible = true
+                    set1tv.isVisible = true
+                    set2.isVisible = true
+                    set2tv.isVisible = true
+                    set3.isVisible = true
+                    set3tv.isVisible = true
+                    set4.isVisible = true
+                    set4tv.isVisible = true
+                    set5.isVisible = true
+                    set5tv.isVisible = true
+                }
+
+            }
+        }
+
+
+
+
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         //bottomNavigation.setSelectedItemId(R.id.home)
@@ -26,6 +120,8 @@ class PushUpDetail : AppCompatActivity() {
 
 
     }
+
+
 
     private val navigationBar = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
