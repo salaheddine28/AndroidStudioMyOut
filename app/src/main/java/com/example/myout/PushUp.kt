@@ -2,6 +2,7 @@ package com.example.myout
 
 import android.content.Intent
 import android.graphics.Color
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -16,11 +17,9 @@ import java.util.*
 
 class PushUp : AppCompatActivity() {
 
-    var s1 = ""
-    var s2 = ""
-    var s3 = ""
-    var s4 = ""
-    var s5 = ""
+
+
+    private var mediaPlayer: MediaPlayer? = null
 
 
 
@@ -41,6 +40,10 @@ class PushUp : AppCompatActivity() {
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         //bottomNavigation.setSelectedItemId(R.id.home)
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.pushup_sound)
+
+
 
         noOfSets = intent.getStringExtra("noOfSets").toString().toInt()
 
@@ -92,7 +95,6 @@ class PushUp : AppCompatActivity() {
 
 
         btn.text = SetArray[0].toString()
-
 
 
 
@@ -162,16 +164,19 @@ class PushUp : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.PushUpButton)
 
 
+
         if (SetArray[0].toInt() != 1 )
         {
+            mediaPlayer?.start()
             SetArray[0] --
+
 
             btn.text = SetArray[0].toString()
         }
         else if (SetArray[0].toInt() == 1 && SetArray[1].toInt() != 0)
         {
+            mediaPlayer?.start()
             if (noOfSets == 1) {
-
                 btn.text = "You Finished"
                 btn.isEnabled = false;
             }
@@ -185,6 +190,7 @@ class PushUp : AppCompatActivity() {
                 {
                     btn.text = SetArray[1].toString()
                     SetArray[1] --
+                    mediaPlayer?.start()
                 }
 
 
@@ -194,6 +200,7 @@ class PushUp : AppCompatActivity() {
         }
         else if (SetArray[1].toInt() == 0 && SetArray[2] != 0)
         {
+            mediaPlayer?.start()
             if (noOfSets == 2) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
@@ -208,6 +215,7 @@ class PushUp : AppCompatActivity() {
                 {
                     btn.text = SetArray[2].toString()
                     SetArray[2] --
+                    mediaPlayer?.start()
                 }
 
             }
@@ -216,6 +224,7 @@ class PushUp : AppCompatActivity() {
         }
         else if (SetArray[2].toInt() == 0 && SetArray[3] != 0)
         {
+            mediaPlayer?.start()
             if (noOfSets == 3) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
@@ -230,6 +239,7 @@ class PushUp : AppCompatActivity() {
                 {
                     btn.text = SetArray[3].toString()
                     SetArray[3] --
+                    mediaPlayer?.start()
                 }
 
 
@@ -239,6 +249,7 @@ class PushUp : AppCompatActivity() {
 
         else if (SetArray[3].toInt() == 0 && SetArray[4] != 0)
         {
+            mediaPlayer?.start()
             if (noOfSets == 4) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
@@ -254,6 +265,7 @@ class PushUp : AppCompatActivity() {
                 {
                     btn.text = SetArray[4].toString()
                     SetArray[4] --
+                    mediaPlayer?.start()
                 }
 
 
@@ -263,6 +275,7 @@ class PushUp : AppCompatActivity() {
 
         else if (SetArray[4].toInt() == 0 && SetArray[5] != 0)
         {
+            mediaPlayer?.start()
             if (noOfSets == 5) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
