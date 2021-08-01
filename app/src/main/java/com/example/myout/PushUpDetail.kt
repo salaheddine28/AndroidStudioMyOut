@@ -138,6 +138,8 @@ class PushUpDetail : AppCompatActivity() {
             setsArray.add(set5.text.toString())
 
             intent.putExtra("key", setsArray)
+
+
 /*
 
             if (noOfSets == "1")

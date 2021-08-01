@@ -16,15 +16,15 @@ import java.util.*
 
 class PushUp : AppCompatActivity() {
 
-    var s1 = 0
-    var s2 = 0
-    var s3 = 0
-    var s4 = 0
-    var s5 = 0
+    var s1 = ""
+    var s2 = ""
+    var s3 = ""
+    var s4 = ""
+    var s5 = ""
 
 
 
-    private val SetArray = arrayOf<Int>(15, 23, 51, 22, 13)
+    private var SetArray = arrayOf<Int>(1,1,1,1,1,1)
 
     var noOfSets = 0
 
@@ -54,16 +54,52 @@ class PushUp : AppCompatActivity() {
         s5 = intent.getStringExtra("s5").toString().toInt()
 */
 
-        val numberList = intent .getSerializableExtra( "key" ).toString()
+        var numberList = intent .getStringArrayListExtra( "key" )
 
 
 
-        var s =
-            "[15.82, 15.870000000000001, 15.92, 16.32, 16.32, 16.32, 16.32, 17.05, 17.05, 17.05, 17.05, 18.29, 18.29, 19.16]"
-        var list: List<Array<String>> =
-            listOf(s.substring(1, s.length - 1).split(", ").toTypedArray())
+        s1 = numberList?.get(0).toString()
+        s2 = numberList?.get(1).toString()
+        s3 = numberList?.get(2).toString()
+        s4 = numberList?.get(3).toString()
+        s5 = numberList?.get(4).toString()
 
-        btn.text = SetArray.toString()
+
+
+        if (noOfSets == 1)
+        {
+            SetArray[0] = s1.toInt()
+        }
+        if (noOfSets == 2)
+        {
+            SetArray[0] = s1.toInt()
+            SetArray[1] = s2.toInt()
+        }
+        if (noOfSets == 3)
+        {
+            SetArray[0] = s1.toInt()
+            SetArray[1] = s2.toInt()
+            SetArray[2] = s3.toInt()
+        }
+        if (noOfSets == 4)
+        {
+            SetArray[0] = s1.toInt()
+            SetArray[1] = s2.toInt()
+            SetArray[2] = s3.toInt()
+            SetArray[3] = s4.toInt()
+        }
+        if (noOfSets == 5)
+        {
+            SetArray[0] = s1.toInt()
+            SetArray[1] = s2.toInt()
+            SetArray[2] = s3.toInt()
+            SetArray[3] = s4.toInt()
+            SetArray[4] = s5.toInt()
+        }
+
+
+        btn.text = SetArray[0].toString()
+
 
 
 
