@@ -20,6 +20,7 @@ class PushUp : AppCompatActivity() {
 
 
     private var mediaPlayer: MediaPlayer? = null
+    private var mediaPlayerFinish: MediaPlayer? = null
 
 
 
@@ -42,6 +43,7 @@ class PushUp : AppCompatActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
 
         mediaPlayer = MediaPlayer.create(this, R.raw.pushup_sound)
+        mediaPlayerFinish = MediaPlayer.create(this, R.raw.finish)
 
 
 
@@ -179,6 +181,9 @@ class PushUp : AppCompatActivity() {
             if (noOfSets == 1) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
+                mediaPlayer?.stop()
+                mediaPlayerFinish?.start()
+
             }
             else {
                 if (!started1)
@@ -204,6 +209,8 @@ class PushUp : AppCompatActivity() {
             if (noOfSets == 2) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
+                mediaPlayer?.stop()
+                mediaPlayerFinish?.start()
             }
             else {
                 if (!started2)
@@ -228,6 +235,8 @@ class PushUp : AppCompatActivity() {
             if (noOfSets == 3) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
+                mediaPlayer?.stop()
+                mediaPlayerFinish?.start()
             }
             else {
                 if (!started3)
@@ -253,6 +262,8 @@ class PushUp : AppCompatActivity() {
             if (noOfSets == 4) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
+                mediaPlayer?.stop()
+                mediaPlayerFinish?.start()
             }
             else {
 
@@ -279,6 +290,8 @@ class PushUp : AppCompatActivity() {
             if (noOfSets == 5) {
                 btn.text = "You Finished"
                 btn.isEnabled = false;
+                mediaPlayer?.stop()
+                mediaPlayerFinish?.start()
             }
 
 
