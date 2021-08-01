@@ -46,23 +46,16 @@ class PushUp : AppCompatActivity() {
 
         var btn = findViewById<Button>(R.id.PushUpButton)
 
-/*
-        s1 = intent.getStringExtra("s1").toString().toInt()
-        s2 = intent.getStringExtra("s2").toString().toInt()
-        s3 = intent.getStringExtra("s3").toString().toInt()
-        s4 = intent.getStringExtra("s4").toString().toInt()
-        s5 = intent.getStringExtra("s5").toString().toInt()
-*/
 
         var numberList = intent .getStringArrayListExtra( "key" )
 
 
 
-        s1 = numberList?.get(0).toString()
-        s2 = numberList?.get(1).toString()
-        s3 = numberList?.get(2).toString()
-        s4 = numberList?.get(3).toString()
-        s5 = numberList?.get(4).toString()
+        var s1 = numberList?.get(0).toString()
+        var s2 = numberList?.get(1).toString()
+        var s3 = numberList?.get(2).toString()
+        var s4 = numberList?.get(3).toString()
+        var s5 = numberList?.get(4).toString()
 
 
 
