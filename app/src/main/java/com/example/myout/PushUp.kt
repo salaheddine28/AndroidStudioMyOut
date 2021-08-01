@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_push_up_detail.*
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.*
 
 class PushUp : AppCompatActivity() {
 
@@ -45,13 +46,24 @@ class PushUp : AppCompatActivity() {
 
         var btn = findViewById<Button>(R.id.PushUpButton)
 
+/*
         s1 = intent.getStringExtra("s1").toString().toInt()
         s2 = intent.getStringExtra("s2").toString().toInt()
-/*        s3 = intent.getStringExtra("s3").toString().toInt()
+        s3 = intent.getStringExtra("s3").toString().toInt()
         s4 = intent.getStringExtra("s4").toString().toInt()
-        s5 = intent.getStringExtra("s5").toString().toInt()*/
+        s5 = intent.getStringExtra("s5").toString().toInt()
+*/
 
-        btn.text = s1.toString()
+        val numberList = intent .getSerializableExtra( "key" ).toString()
+
+
+
+        var s =
+            "[15.82, 15.870000000000001, 15.92, 16.32, 16.32, 16.32, 16.32, 17.05, 17.05, 17.05, 17.05, 18.29, 18.29, 19.16]"
+        var list: List<Array<String>> =
+            listOf(s.substring(1, s.length - 1).split(", ").toTypedArray())
+
+        btn.text = SetArray.toString()
 
 
 

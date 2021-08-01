@@ -129,19 +129,16 @@ class PushUpDetail : AppCompatActivity() {
             val intent = Intent(this, PushUp::class.java)
             intent.putExtra("noOfSets", noOfSets)
 
+            var setsArray: ArrayList<String> = ArrayList()
+
+            setsArray.add(set1.text.toString())
+            setsArray.add(set2.text.toString())
+            setsArray.add(set3.text.toString())
+            setsArray.add(set4.text.toString())
+            setsArray.add(set5.text.toString())
+
+            intent.putExtra("key", setsArray)
 /*
-            if (noOfSets == "1")
-            {
-                s1 = set1.text.toString()
-
-                intent.putExtra("s1", s1)
-                intent.putExtra("s2", 0)
-                intent.putExtra("s3", 0)
-                intent.putExtra("s4", 0)
-                intent.putExtra("s5", 0)
-            }
-*/
-
 
             if (noOfSets == "1")
             {
@@ -206,6 +203,7 @@ class PushUpDetail : AppCompatActivity() {
                 intent.putExtra("s4", s4)
                 intent.putExtra("s5", s5)
             }
+*/
 
             startActivity(intent)
             finish()
