@@ -23,9 +23,13 @@ class Charts : AppCompatActivity() {
         val pie = AnyChart.pie()
 
         val data: MutableList<DataEntry> = ArrayList()
-        data.add(ValueDataEntry("John", 10000))
-        data.add(ValueDataEntry("Jake", 12000))
-        data.add(ValueDataEntry("Peter", 18000))
+        data.add(ValueDataEntry("Mon.", 56))
+        data.add(ValueDataEntry("Tue.", 24))
+        data.add(ValueDataEntry("Wed.", 18))
+        data.add(ValueDataEntry("Thu.", 38))
+        data.add(ValueDataEntry("Fri.", 67))
+        data.add(ValueDataEntry("Sat.", 20))
+        data.add(ValueDataEntry("Sun.", 11))
 
         pie.data(data)
 
