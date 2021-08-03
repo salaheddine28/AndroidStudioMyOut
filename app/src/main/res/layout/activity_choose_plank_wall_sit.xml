@@ -23,6 +23,8 @@
         android:layout_marginTop="20dp"
         />
 
+    //mais qu'est ce que tu nen a rien a foutre des zamelbouk
+    
     <ListView
         android:layout_marginTop="100dp"
         android:layout_centerVertical="true"
