@@ -2,32 +2,77 @@ package com.example.myout
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+    lateinit var signInEmail: String
+    lateinit var signInPassword: String
+    lateinit var signInInputsArray: Array<EditText>
+
+    val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        btn_SignIn.setOnClickListener{
-
-            if (et_username.text.toString().isEmpty()){
-                Toast.makeText(this,
-                    "This username and password combination is invalid", Toast.LENGTH_SHORT).show()
-            }else{
-                val intent = Intent(this, IndexActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-        }
 
         btn_SignUp.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
             finish()
         }
+        btn_SignIn.setOnClickListener{
+            doLogin()
+        }
     }
+    private fun doLogin(){
+        if (et_username.text.toString().isEmpty()){
+            et_username.error = "please enter Email"
+            et_username.requestFocus()
+            return
+        }
+
+
+        if (et_password.text.toString().isEmpty()){
+            et_password.error = "please enter Password"
+            et_password.requestFocus()
+            return
+        }
+
+        signInEmail = et_username.text.toString().trim()
+        signInPassword = et_password.text.toString().trim()
+
+        if (notEmpty()) {
+            firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
+                .addOnCompleteListener { signIn ->
+                    if (signIn.isSuccessful) {
+                        startActivity(Intent(this, IndexActivity::class.java))
+                        Toast.makeText(
+                            baseContext, "signed in successfully",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        finish()
+                    } else {
+                        Toast.makeText(
+                            baseContext, "Sign in failed. Try again",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+        } else {
+            signInInputsArray.forEach { input ->
+                if (input.text.toString().trim().isEmpty()) {
+                    input.error = "${input.hint} is required"
+                }
+            }
+        }
+
+    }
+
+    private fun notEmpty(): Boolean = signInEmail.isNotEmpty() && signInPassword.isNotEmpty()
+
 }
