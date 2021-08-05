@@ -45,7 +45,7 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/SetTimerText"
+                android:id="@+id/SetTimerTextPlank"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
@@ -61,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="#007AAF"
+                android:onClick="StartPlank"
                 android:text="Start"
                 android:textColor="@color/white"></Button>
 

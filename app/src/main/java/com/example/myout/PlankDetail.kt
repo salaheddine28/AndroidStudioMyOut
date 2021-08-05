@@ -3,9 +3,13 @@ package com.example.myout
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.TextureView
+import android.view.View
+import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PlankDetail : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plank_detail)
@@ -14,6 +18,7 @@ class PlankDetail : AppCompatActivity() {
         //bottomNavigation.setSelectedItemId(R.id.home)
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
     }
+
 
 
 
@@ -38,5 +43,15 @@ class PlankDetail : AppCompatActivity() {
 
         }
         false
+    }
+
+    fun StartPlank(view: View) {
+
+        var time = findViewById<androidx.appcompat.widget.AppCompatEditText>(R.id.SetTimerTextPlank)
+
+        val intent = Intent(this, Plank::class.java)
+        intent.putExtra("key", time.toString())
+
+        startActivity(intent)
     }
 }

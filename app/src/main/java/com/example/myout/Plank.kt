@@ -16,6 +16,8 @@ import java.util.*
 
 class Plank : AppCompatActivity() {
 
+    var time = 0;
+
     companion object {
         fun setAlarm(context: Context, nowSeconds: Long, secondsRemaining: Long): Long{
             val wakeUpTime = (nowSeconds + secondsRemaining) * 1000
@@ -83,6 +85,9 @@ class Plank : AppCompatActivity() {
             timerState = TimerEnum.Stopped
             onTimerFinished()
         }
+
+
+         time = intent.getStringExtra("key").toString().toInt()
 
     }
 
@@ -171,7 +176,7 @@ class Plank : AppCompatActivity() {
 
     private fun setNewTimerLength(){
         val lengthInMinutes = PrefUtil.getTimerLength(this)
-        timerLengthSeconds = (lengthInMinutes * 60L)
+        timerLengthSeconds = (time * 60L)
         progress_countdown.max = timerLengthSeconds.toInt()
     }
 
