@@ -3,14 +3,13 @@ package com.example.myout.util
 import android.content.Context
 import android.preference.PreferenceManager
 import com.example.myout.Plank
+import com.example.myout.WallSit
 
 class PrefUtil {
     companion object {
 
-        private const val TIMER_LENGTH_ID = "com.resocoder.timer.timer_length"
         fun getTimerLength(context: Context): Int{
-            val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-            return preferences.getInt(TIMER_LENGTH_ID, 10)
+            return 1
         }
 
         private const val PREVIOUS_TIMER_LENGTH_SECONDS_ID = "com.resocoder.timer.previous_timer_length_seconds"
@@ -36,6 +35,20 @@ class PrefUtil {
         }
 
         fun setTimerState(state: Plank.TimerEnum, context: Context){
+            val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
+            val ordinal = state.ordinal
+            editor.putInt(TIMER_STATE_ID, ordinal)
+            editor.apply()
+        }
+
+
+        fun getTimerStateWall(context: Context): WallSit.TimerEnum{
+            val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+            val ordinal = preferences.getInt(TIMER_STATE_ID, 0)
+            return WallSit.TimerEnum.values()[ordinal]
+        }
+
+        fun setTimerStateWall(state: WallSit.TimerEnum, context: Context){
             val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
             val ordinal = state.ordinal
             editor.putInt(TIMER_STATE_ID, ordinal)

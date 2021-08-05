@@ -214,8 +214,6 @@ class Plank : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> {
-                val intent = Intent(this, SetTimer::class.java)
-                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
