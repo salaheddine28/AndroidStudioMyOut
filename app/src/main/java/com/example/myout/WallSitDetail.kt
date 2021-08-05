@@ -4,39 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_choose_plank_wall_sit.*
-import kotlinx.android.synthetic.main.activity_index.*
 
-class ChoosePlankWallSit : AppCompatActivity() {
-
-    private val name = arrayOf("Plank", "Wall-sit")
-    private val image = arrayOf(R.drawable.planks, R.drawable.wallsit)
-
+class WallSitDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_choose_plank_wall_sit)
+        setContentView(R.layout.activity_wall_sit_detail)
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         //bottomNavigation.setSelectedItemId(R.id.home)
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
-
-
-        list_view_Plank_WallSit.adapter = ListAdapter(this, image, name)
-        list_view_Plank_WallSit.setOnItemClickListener { parent, view, position, id ->
-            if (position==0){
-                val intent = Intent(this, PlankDetail::class.java)
-                startActivity(intent)
-                finish()
-            }
-
-            if (position==1){
-                val intent = Intent(this, WallSitDetail::class.java)
-                startActivity(intent)
-                finish()
-            }
-
-        }
     }
+
 
     private val navigationBar = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -59,6 +37,5 @@ class ChoosePlankWallSit : AppCompatActivity() {
 
         }
         false
-
     }
 }

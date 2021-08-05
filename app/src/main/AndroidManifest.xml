@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyOut">
-
-        <activity android:name=".SetTimer"
-            android:theme="@style/NoActionBarTheme">
-
-        </activity>
+        <activity android:name=".WallSitDetail"
+            android:theme="@style/NoActionBarTheme"></activity>
+        <activity
+            android:name=".PlankDetail"
+            android:theme="@style/NoActionBarTheme" />
 
         <receiver
             android:name=".TimerNotificationActionReceiver"
@@ -62,8 +62,7 @@
         <activity
             android:name=".Plank"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme">
-        </activity>
+            android:theme="@style/NoActionBarTheme" />
         <activity
             android:name=".ChoosePlankWallSit"
             android:screenOrientation="portrait"
