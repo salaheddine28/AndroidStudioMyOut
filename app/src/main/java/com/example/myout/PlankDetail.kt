@@ -7,6 +7,7 @@ import android.view.TextureView
 import android.view.View
 import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_plank_detail.*
 
 class PlankDetail : AppCompatActivity() {
 
@@ -47,10 +48,10 @@ class PlankDetail : AppCompatActivity() {
 
     fun StartPlank(view: View) {
 
-        var time = findViewById<androidx.appcompat.widget.AppCompatEditText>(R.id.SetTimerTextPlank)
+        var time = SetTimerTextPlank.text.toString()
 
-        val intent = Intent(this, Plank::class.java)
-        intent.putExtra("key", time.toString())
+        var intent = Intent(this, Plank::class.java)
+        intent.putExtra("key", time)
 
         startActivity(intent)
     }
