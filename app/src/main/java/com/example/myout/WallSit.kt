@@ -72,7 +72,7 @@ var time = 0
             val wakeUpTime = WallSit.setAlarm(this, WallSit.nowSeconds, secondsRemaining)
             NotificationUtil.showTimerRunning(this, wakeUpTime)
         }
-        else if (timerState == Plank.TimerEnum.Paused){
+        else if (timerState == WallSit.TimerEnum.Paused){
             NotificationUtil.showTimerPaused(this)
         }
         PrefUtil.setPreviousTimerLengthSeconds(timerLengthSeconds, this)
