@@ -32,8 +32,6 @@ class SignUp : AppCompatActivity() {
         SignUp_btn_SignUp.setOnClickListener {
             signUpUser()
         }
-
-
     }
 
     fun saveData(firstname: String, lastname: String, email: String, height: String, weight: String, birthday: String){
