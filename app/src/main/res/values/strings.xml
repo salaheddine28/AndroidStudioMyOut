@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">MyOut</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="google_maps_api_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDCCRuQK1SXhZ4LEo4RNDij8NxyoOkBRMY</string>
+    <string name="_00_00_00_00">00:00:00:00</string>
+    <string name="start">Start</string>
+    <string name="finish_run">Finish Run</string>
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Running Time</item>
+        <item>Distance</item>
+        <item>Average Speed</item>
+        <item>Calories Burned</item>
+    </string-array>
     <array name="gender">
         <item>Male</item>
         <item>Female</item>
