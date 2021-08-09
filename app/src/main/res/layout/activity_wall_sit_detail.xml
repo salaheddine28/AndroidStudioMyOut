@@ -63,6 +63,7 @@
                 android:background="#007AAF"
                 android:onClick="StarttTimerWall"
                 android:text="Start"
+                android:inputType = "number"
                 android:textColor="@color/white"></Button>
 
         </LinearLayout>

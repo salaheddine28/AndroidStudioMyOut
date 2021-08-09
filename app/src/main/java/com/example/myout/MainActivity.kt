@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     private val CHANNEL_ID = "channel_id_example_01"
     private val notificationId = 101
 
+/*    comm*/
+
 
 
     val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
