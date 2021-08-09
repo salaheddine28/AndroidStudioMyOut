@@ -21,7 +21,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:background="@color/white">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarRunning"
@@ -36,7 +37,7 @@
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@android:color/white"
+                android:textColor="#007AAF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -78,7 +79,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_above="@+id/bottom_navigation"/>
+        android:layout_above="@+id/bottom_navigation"
+        android:background="?android:attr/windowBackground"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

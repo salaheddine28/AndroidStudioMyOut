@@ -42,6 +42,7 @@ class Running : AppCompatActivity() {
                 }
             }
 
+
     }
 
 
@@ -57,6 +58,8 @@ class Running : AppCompatActivity() {
     }
 
     private val navigationBar = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+
+
         when (item.itemId) {
             R.id.ic_home -> {
                 val intent = Intent(this@Running, IndexActivity::class.java)
