@@ -83,7 +83,6 @@
                 android:padding="3dp"
                 android:textColor="#363A43"
                 android:textColorHint="#7A8089"
-                android:inputType = "number"
                 android:visibility="gone" />
 
             <TextView
@@ -109,7 +108,6 @@
                 android:padding="3dp"
                 android:textColor="#363A43"
                 android:textColorHint="#7A8089"
-                android:inputType = "number"
                 android:visibility="gone" />
 
             <TextView
@@ -135,7 +133,6 @@
                 android:padding="3dp"
                 android:textColor="#363A43"
                 android:textColorHint="#7A8089"
-                android:inputType = "number"
                 android:visibility="gone" />
 
             <TextView
@@ -161,7 +158,6 @@
                 android:padding="3dp"
                 android:textColor="#363A43"
                 android:textColorHint="#7A8089"
-                android:inputType = "number"
                 android:visibility="gone" />
 
             <TextView
@@ -187,8 +183,7 @@
                 android:padding="3dp"
                 android:textColor="#363A43"
                 android:textColorHint="#7A8089"
-                android:visibility="gone"
-                android:inputType = "number"/>
+                android:visibility="gone" />
 
 
             <Button
