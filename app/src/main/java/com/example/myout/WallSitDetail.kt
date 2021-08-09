@@ -3,10 +3,7 @@ package com.example.myout
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_plank_detail.*
-import kotlinx.android.synthetic.main.activity_wall_sit_detail.*
 
 class WallSitDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,14 +37,5 @@ class WallSitDetail : AppCompatActivity() {
 
         }
         false
-    }
-
-    fun StarttTimerWall(view: View) {
-        var time = SetTimerText.text.toString()
-
-        var intent = Intent(this, WallSit::class.java)
-        intent.putExtra("key", time)
-
-        startActivity(intent)
     }
 }

@@ -19,7 +19,7 @@ import java.util.*
 
 class WallSit : AppCompatActivity() {
 
-var time = 0
+
     companion object {
         fun setAlarm(context: Context, nowSeconds: Long, secondsRemaining: Long): Long{
             val wakeUpTime = (nowSeconds + secondsRemaining) * 1000
@@ -72,7 +72,7 @@ var time = 0
             val wakeUpTime = WallSit.setAlarm(this, WallSit.nowSeconds, secondsRemaining)
             NotificationUtil.showTimerRunning(this, wakeUpTime)
         }
-        else if (timerState == WallSit.TimerEnum.Paused){
+        else if (timerState == Plank.TimerEnum.Paused){
             NotificationUtil.showTimerPaused(this)
         }
         PrefUtil.setPreviousTimerLengthSeconds(timerLengthSeconds, this)
@@ -138,8 +138,8 @@ var time = 0
     }
 
     private fun setNewTimerLength(){
-
-        timerLengthSeconds = (time * 60L)
+        val lengthInMinutes = PrefUtil.getTimerLength(this)
+        timerLengthSeconds = (lengthInMinutes * 60L)
         progress_countdown.max = timerLengthSeconds.toInt()
     }
 
@@ -191,6 +191,17 @@ var time = 0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wall_sit)
@@ -216,9 +227,18 @@ var time = 0
             timerState = WallSit.TimerEnum.Stopped
             onTimerFinished()
         }
-
-        time = intent.getStringExtra("key").toString().toInt()
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
     private val navigationBar = BottomNavigationView.OnNavigationItemSelectedListener { item ->
