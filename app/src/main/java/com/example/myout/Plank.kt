@@ -86,7 +86,6 @@ class Plank : AppCompatActivity() {
             onTimerFinished()
         }
 
-
          time = intent.getStringExtra("key").toString().toInt()
 
     }
