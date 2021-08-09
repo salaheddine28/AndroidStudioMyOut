@@ -6,6 +6,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -14,12 +17,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var signInPassword: String
     lateinit var signInInputsArray: Array<EditText>
 
-    val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var fStore: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        firebaseAuth = FirebaseAuth.getInstance()
+        val db = Firebase.firestore
         btn_SignUp.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)

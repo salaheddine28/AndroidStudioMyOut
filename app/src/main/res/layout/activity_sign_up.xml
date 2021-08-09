@@ -63,14 +63,15 @@
                 android:layout_marginTop="30dp"/>
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:padding="10dp"
                 android:id="@+id/SignUp_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:hint="*******"
+                android:inputType="textPassword"
+                android:padding="10dp"
                 android:textColor="#007AAF"
-                android:textColorHint="#7A8089"
-                android:layout_marginTop="30dp"/>
+                android:textColorHint="#7A8089" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:padding="10dp"
@@ -93,15 +94,15 @@
                 android:textColorHint="#7A8089"
                 android:layout_marginTop="30dp"/>
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:padding="10dp"
-                android:id="@+id/SignUp_Gender"
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Male"
                 android:textColor="#007AAF"
-                android:textColorHint="#7A8089"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="20dp"
+                android:entries="@array/gender"
+            />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:padding="10dp"
