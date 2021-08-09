@@ -3,7 +3,10 @@ package com.example.myout
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myout.ui.Running
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.ListAdapter
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_index.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,18 +29,6 @@ class IndexActivity : AppCompatActivity() {
         list_view.setOnItemClickListener { parent, view, position, id ->
             if (position==0){
                 val intent = Intent(this, PushUpDetail::class.java)
-                startActivity(intent)
-                finish()
-            }
-
-            if (position==1){
-                val intent = Intent(this, SquatDetail::class.java)
-                startActivity(intent)
-                finish()
-            }
-
-            if (position==2){
-                val intent = Intent(this, SquatDetail::class.java)
                 startActivity(intent)
                 finish()
             }
