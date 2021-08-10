@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myout">
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".BaseApplication"
@@ -15,8 +15,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyOut">
-        <activity android:name=".WallSitDetail"
-            android:theme="@style/NoActionBarTheme"></activity>
+        <activity android:name=".InstructionsSquat"
+            android:theme="@style/NoActionBarTheme"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".SquatDetail"
+            android:theme="@style/NoActionBarTheme"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".WallSitDetail"
+            android:theme="@style/NoActionBarTheme" />
         <activity
             android:name=".PlankDetail"
             android:theme="@style/NoActionBarTheme" />
@@ -36,13 +43,33 @@
             android:name=".TimerExpiredReceiver"
             android:enabled="true"
             android:exported="false" />
-        <receiver android:name="com.example.myout.AlarmReceiver" android:enabled="true"/>
-        <receiver android:name="com.example.myout.BootReceiver" android:enabled="true">
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true" />
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name=".InstructionsPushUps"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".InstructionsPlank"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".InstructionsWallSit"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".Squat"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
         <activity
             android:name=".SignUp"
             android:screenOrientation="portrait"
@@ -91,29 +118,29 @@
         <activity
             android:name=".IndexActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme" />
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme"
-            android:windowSoftInputMode="adjustResize">
+            android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme"
+            android:windowSoftInputMode="adjustResize" />
 
-        <service android:name=".services.TrackingService"
-            android:foregroundServiceType="location"/>
+        <service
+            android:name=".services.TrackingService"
+            android:foregroundServiceType="location" />
 
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_api_key"/>
-
+            android:value="@string/google_maps_api_key" />
     </application>
 
 </manifest>

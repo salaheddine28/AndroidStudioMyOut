@@ -30,12 +30,6 @@ class IndexActivity : AppCompatActivity() {
                 finish()
             }
 
-            if (position==1){
-                val intent = Intent(this, SquatDetail::class.java)
-                startActivity(intent)
-                finish()
-            }
-
             if (position==2){
                 val intent = Intent(this, SquatDetail::class.java)
                 startActivity(intent)

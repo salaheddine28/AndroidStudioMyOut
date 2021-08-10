@@ -132,19 +132,6 @@
 
 
 
-
-
-            <Button
-                android:id="@+id/btn_InstructionsPlank"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Instructions"
-                android:background="#007AAF"
-                android:textColor="@color/white"
-                >
-            </Button>
-
             <FrameLayout
                 android:id="@+id/fl_wrapper"
                 android:layout_width="match_parent"

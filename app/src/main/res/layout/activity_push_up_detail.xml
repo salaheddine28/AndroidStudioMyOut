@@ -209,7 +209,7 @@
                 android:layout_height="80dp">
 
                 <Button
-                    android:id="@+id/btn_instructions"
+                    android:id="@+id/btn_instructionsPushUps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"

@@ -16,6 +16,11 @@ class WallSitDetail : AppCompatActivity() {
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         //bottomNavigation.setSelectedItemId(R.id.home)
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
+
+        btn_InstructionsWall.setOnClickListener{
+            val intent = Intent(this, InstructionsWallSit::class.java)
+            startActivity(intent)
+        }
     }
 
 
