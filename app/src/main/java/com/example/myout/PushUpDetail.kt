@@ -10,6 +10,7 @@ import android.widget.*
 import androidx.core.view.isVisible
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_plank_detail.*
 import kotlinx.android.synthetic.main.activity_push_up_detail.*
 
 class PushUpDetail : AppCompatActivity() {
@@ -27,6 +28,11 @@ class PushUpDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_push_up_detail)
+
+        btn_instructionsPushUps.setOnClickListener{
+            val intent = Intent(this, InstructionsPushUps::class.java)
+            startActivity(intent)
+        }
 
         val options = arrayOf("1 set", "2 sets", "3 sets", "4 sets", "5 sets")
 
