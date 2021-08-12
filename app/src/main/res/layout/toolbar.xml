@@ -8,15 +8,22 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logo"
+        />
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="MyOut"
         android:textColor="@color/black"
-        android:gravity="center"
         android:textSize="30dp"
-        android:textStyle="bold"
-        >
+        android:textStyle="bold">
 
     </TextView>
+
+
 </androidx.appcompat.widget.Toolbar>
