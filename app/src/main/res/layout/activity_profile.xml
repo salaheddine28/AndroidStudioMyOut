@@ -12,6 +12,7 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
+
         />
 
     <ImageView
@@ -63,44 +64,68 @@
             android:padding="16dp">
 
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:padding="10dp"
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                android:id="@+id/textViewResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameText"
+                android:textColor="#000000"
+                android:layout_margin="10dp"
+                />
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:id="@+id/Firstname"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Salaheddine"
-                android:textColor="#007AAF"
-                android:textColorHint="#7A8089" />
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="#000000"
+                android:layout_margin="10dp"
+                 />
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:padding="10dp"
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:id="@+id/Lastname"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Zeroual"
-                android:textColor="#007AAF"
-                android:textColorHint="#7A8089"
-                android:layout_marginTop="30dp"/>
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameText"
+                android:textColor="#000000"
+                android:layout_margin="10dp"/>
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:padding="10dp"
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:id="@+id/Height"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="170cm"
-                android:textColor="#007AAF"
-                android:textColorHint="#7A8089"
-                android:layout_marginTop="30dp"/>
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameText"
+                android:textColor="#000000"
+                android:layout_margin="10dp"
+                />
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:padding="10dp"
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:id="@+id/Weight"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="68kg"
-                android:textColor="#007AAF"
-                android:textColorHint="#7A8089"
-                android:layout_marginTop="30dp"/>
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameText"
+                android:textColor="#000000"
+                android:layout_margin="10dp"
+                />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:padding="10dp"
