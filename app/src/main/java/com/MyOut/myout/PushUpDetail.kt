@@ -3,6 +3,8 @@ package com.MyOut.myout
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.*
 import androidx.core.view.isVisible
@@ -59,6 +61,28 @@ class PushUpDetail : AppCompatActivity() {
                     set5.isVisible = false
                     set5tv.isVisible = false
                     noOfSets = "1"
+
+                    btn_Start.isEnabled = false
+                    val editTexts = listOf(set1)
+                    for (editText in editTexts) {
+                        editText.addTextChangedListener(object : TextWatcher {
+                            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                                var et1 = set1.text.toString().trim()
+                                btn_Start.isEnabled = et1.isNotEmpty()
+                            }
+
+                            override fun beforeTextChanged(
+                                s: CharSequence, start: Int, count: Int, after: Int) {
+                            }
+
+                            override fun afterTextChanged(
+                                s: Editable
+                            ) {
+                            }
+                        })
+                    }
+
+
                 }
                 if (options[p2] == "2 sets")
                 {
@@ -73,6 +97,30 @@ class PushUpDetail : AppCompatActivity() {
                     set5.isVisible = false
                     set5tv.isVisible = false
                     noOfSets = "2"
+
+                    btn_Start.isEnabled = false
+                    val editTexts = listOf(set1, set2)
+                    for (editText in editTexts) {
+                        editText.addTextChangedListener(object : TextWatcher {
+                            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                                var et1 = set1.text.toString().trim()
+                                var et2 = set2.text.toString().trim()
+
+
+                                btn_Start.isEnabled = et1.isNotEmpty()
+                                        && et2.isNotEmpty()
+                            }
+
+                            override fun beforeTextChanged(
+                                s: CharSequence, start: Int, count: Int, after: Int) {
+                            }
+
+                            override fun afterTextChanged(
+                                s: Editable) {
+                            }
+                        })
+                    }
+
                 }
                 if (options[p2] == "3 sets")
                 {
@@ -87,6 +135,31 @@ class PushUpDetail : AppCompatActivity() {
                     set5.isVisible = false
                     set5tv.isVisible = false
                     noOfSets = "3"
+
+                    btn_Start.isEnabled = false
+                    val editTexts = listOf(set1, set2, set3)
+                    for (editText in editTexts) {
+                        editText.addTextChangedListener(object : TextWatcher {
+                            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                                var et1 = set1.text.toString().trim()
+                                var et2 = set2.text.toString().trim()
+                                var et3 = set3.text.toString().trim()
+
+
+                                btn_Start.isEnabled = et1.isNotEmpty()
+                                        && et2.isNotEmpty()
+                                        && et3.isNotEmpty()
+                            }
+
+                            override fun beforeTextChanged(
+                                s: CharSequence, start: Int, count: Int, after: Int) {
+                            }
+
+                            override fun afterTextChanged(
+                                s: Editable) {
+                            }
+                        })
+                    }
                 }
                 if (options[p2] == "4 sets")
                 {
@@ -101,6 +174,33 @@ class PushUpDetail : AppCompatActivity() {
                     set5.isVisible = false
                     set5tv.isVisible = false
                     noOfSets = "4"
+
+                    btn_Start.isEnabled = false
+                    val editTexts = listOf(set1, set2, set3, set4)
+                    for (editText in editTexts) {
+                        editText.addTextChangedListener(object : TextWatcher {
+                            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                                var et1 = set1.text.toString().trim()
+                                var et2 = set2.text.toString().trim()
+                                var et3 = set3.text.toString().trim()
+                                var et4 = set4.text.toString().trim()
+
+
+                                btn_Start.isEnabled = et1.isNotEmpty()
+                                        && et2.isNotEmpty()
+                                        && et3.isNotEmpty()
+                                        && et4.isNotEmpty()
+                            }
+
+                            override fun beforeTextChanged(
+                                s: CharSequence, start: Int, count: Int, after: Int) {
+                            }
+
+                            override fun afterTextChanged(
+                                s: Editable) {
+                            }
+                        })
+                    }
                 }
                 if (options[p2] == "5 sets")
                 {
@@ -115,6 +215,35 @@ class PushUpDetail : AppCompatActivity() {
                     set5.isVisible = true
                     set5tv.isVisible = true
                     noOfSets = "5"
+
+                    btn_Start.isEnabled = false
+                    val editTexts = listOf(set1, set2, set3, set4, set5)
+                    for (editText in editTexts) {
+                        editText.addTextChangedListener(object : TextWatcher {
+                            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                                var et1 = set1.text.toString().trim()
+                                var et2 = set2.text.toString().trim()
+                                var et3 = set3.text.toString().trim()
+                                var et4 = set4.text.toString().trim()
+                                var et5 = set5.text.toString().trim()
+
+
+                                btn_Start.isEnabled = et1.isNotEmpty()
+                                        && et2.isNotEmpty()
+                                        && et3.isNotEmpty()
+                                        && et4.isNotEmpty()
+                                        && et5.isNotEmpty()
+                            }
+
+                            override fun beforeTextChanged(
+                                s: CharSequence, start: Int, count: Int, after: Int) {
+                            }
+
+                            override fun afterTextChanged(
+                                s: Editable) {
+                            }
+                        })
+                    }
                 }
 
             }
