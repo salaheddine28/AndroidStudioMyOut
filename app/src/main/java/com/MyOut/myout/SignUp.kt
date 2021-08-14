@@ -35,6 +35,7 @@ class SignUp : AppCompatActivity() {
     }
 
     fun saveData(firstname: String, lastname: String, email: String, height: String, weight: String, birthday: String){
+
         val user = hashMapOf(
             "Firstname" to firstname,
             "Lastname" to lastname,
@@ -45,10 +46,9 @@ class SignUp : AppCompatActivity() {
         )
 
         // Add a new document with a generated ID
-        db.collection("users")
-            .add(user)
+        db.collection("users").document(auth.currentUser!!.uid).set(user)
             .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                Log.d(TAG, "DocumentSnapshot added with ID: ${auth.currentUser!!.uid}")
             }
             .addOnFailureListener { e ->
                 Log.w(TAG, "Error adding document", e)

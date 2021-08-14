@@ -3,6 +3,7 @@ package com.MyOut.myout
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.MyOut.myout.databinding.ActivityProfileBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,9 +22,6 @@ class Profile : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-    private var mFirebaseDatabaseInstance: FirebaseFirestore?=null
-    private var userId:String?=null
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,13 +30,13 @@ class Profile : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-
+        loadProfile()
 
 
         btn_Save.setOnClickListener {
 
         }
-        loadProfile()
+
         btn_Settings.setOnClickListener {
             val intent = Intent(this, SettingsProfile::class.java)
             startActivity(intent)
@@ -53,25 +51,35 @@ class Profile : AppCompatActivity() {
     }
 
     private fun loadProfile() {
+
+
         val db = FirebaseFirestore.getInstance()
-        db.collection("users")
-            .get()
-            .addOnCompleteListener {
+        val docRef = db.collection("users").document(auth.currentUser!!.uid)
 
-                val result: StringBuffer = StringBuffer()
+        val firstname = findViewById(R.id.firstname) as TextView
+        val lastname = findViewById(R.id.lastname) as TextView
+        val height = findViewById(R.id.height) as TextView
+        val weight = findViewById(R.id.weight) as TextView
 
-                if(it.isSuccessful) {
-                    for(document in it.result!!) {
-                        result.append(document.data.getValue("Firstname")).append(" ")
-                            .append(document.data.getValue("Lastname")).append("\n\n")
-                    }
-                    textViewResult.setText(result)
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null){
+                    Log.d("Exist", "DocumentSnapchot data: ${document.data}")
+
+                    firstname.text = document.getString("Firstname")
+                    lastname.text = document.getString("Lastname")
+                    height.text = document.getString("height")
+                    weight.text = document.getString("weight")
+                }else {
+                    Log.d("noexist", "No such document")
                 }
+            }
+            .addOnFailureListener{
+                Log.d("errordb", "get failed with")
             }
 
 
-
-        }
+    }
 
 
     private val navigationBar = BottomNavigationView.OnNavigationItemSelectedListener { item ->
