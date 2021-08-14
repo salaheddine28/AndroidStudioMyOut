@@ -4,6 +4,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -19,6 +20,7 @@ import java.util.*
 
 class WallSit : AppCompatActivity() {
 
+    private var mediaPlayerFinish: MediaPlayer? = null
 var time = 0
     companion object {
         fun setAlarm(context: Context, nowSeconds: Long, secondsRemaining: Long): Long{
@@ -106,10 +108,13 @@ var time = 0
 
         updateButtons()
         updateCountdownUI()
+
+        mediaPlayerFinish = MediaPlayer.create(this, R.raw.finish)
     }
 
     private fun onTimerFinished(){
         timerState = TimerEnum.Stopped
+        mediaPlayerFinish?.start()
 
         //set the length of the timer to be the one set in SettingsActivity
         //if the length was changed when the timer was running
