@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/runFragment2"
-        android:name="com.example.myout.ui.fragments.RunFragment"
+        android:name="com.MyOut.myout.ui.fragments.RunFragment"
         android:label="RunFragment" >
         <action
             android:id="@+id/action_runFragment2_to_trackingFragment"
@@ -17,15 +17,15 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment2"
-        android:name="com.example.myout.ui.fragments.SettingsFragment"
+        android:name="com.MyOut.myout.ui.fragments.SettingsFragment"
         android:label="SettingsFragment" />
     <fragment
         android:id="@+id/statisticsFragment2"
-        android:name="com.example.myout.ui.fragments.StatisticsFragment"
+        android:name="com.MyOut.myout.ui.fragments.StatisticsFragment"
         android:label="StatisticsFragment" />
     <fragment
         android:id="@+id/trackingFragment"
-        android:name="com.example.myout.ui.fragments.TrackingFragment"
+        android:name="com.MyOut.myout.ui.fragments.TrackingFragment"
         android:label="TrackingFragment" >
         <action
             android:id="@+id/action_trackingFragment_to_runFragment2"
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/setupFragment"
-        android:name="com.example.myout.ui.fragments.SetupFragment"
+        android:name="com.MyOut.myout.ui.fragments.SetupFragment"
         android:label="SetupFragment" >
         <action
             android:id="@+id/action_setupFragment_to_runFragment2"
