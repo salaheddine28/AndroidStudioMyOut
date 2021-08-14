@@ -4,6 +4,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -17,6 +18,7 @@ import java.util.*
 class Plank : AppCompatActivity() {
 
     var time = 0
+    private var mediaPlayerFinish: MediaPlayer? = null
 
     companion object {
         fun setAlarm(context: Context, nowSeconds: Long, secondsRemaining: Long): Long{
@@ -88,6 +90,8 @@ class Plank : AppCompatActivity() {
 
          time = intent.getStringExtra("key").toString().toInt()
 
+        mediaPlayerFinish = MediaPlayer.create(this, R.raw.finish)
+
     }
 
 
@@ -146,6 +150,7 @@ class Plank : AppCompatActivity() {
 
     private fun onTimerFinished(){
         timerState = TimerEnum.Stopped
+        mediaPlayerFinish?.start()
 
         //set the length of the timer to be the one set in SettingsActivity
         //if the length was changed when the timer was running
