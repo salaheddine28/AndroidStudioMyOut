@@ -10,9 +10,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class IndexActivity : AppCompatActivity() {
 
-    private val name = arrayOf("Push-Up","Pull-Up","Squat", "Plank / Wall-sit", "Running")
+    private val name = arrayOf("Push-Up","Squat", "Plank / Wall-sit", "Running")
 
-    private val image = arrayOf(R.drawable.pushup,R.drawable.pullup , R.drawable.squats, R.drawable.planks, R.drawable.running)
+    private val image = arrayOf(R.drawable.pushup, R.drawable.squats, R.drawable.planks, R.drawable.running)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_index)
