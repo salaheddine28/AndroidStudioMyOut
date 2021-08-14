@@ -11,10 +11,6 @@
         android:icon="@drawable/ic_baseline_bar_chart_24"
         android:title="Bar"/>
 
-    <item
-        android:id="@+id/ic_social"
-        android:icon="@drawable/ic_baseline_language_24"
-        android:title="Social"/>
 
     <item
         android:id="@+id/ic_profile"
