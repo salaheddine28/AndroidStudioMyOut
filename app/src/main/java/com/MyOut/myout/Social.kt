@@ -11,7 +11,6 @@ class Social : AppCompatActivity() {
         setContentView(R.layout.activity_social)
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNavigation.setSelectedItemId(R.id.ic_social)
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
     }
 
@@ -32,9 +31,7 @@ class Social : AppCompatActivity() {
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.ic_social -> {
-                return@OnNavigationItemSelectedListener false
-            }
+
 
         }
         false

@@ -4,26 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_settings_profile.*
 
-class SettingsProfile : AppCompatActivity() {
+class Settings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings_profile)
+        setContentView(R.layout.activity_settings)
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
         bottomNavigation.setSelectedItemId(R.id.ic_profile)
-
-
-        btn_Disconnect.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
     }
-
 
     private val navigationBar = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -42,15 +32,9 @@ class SettingsProfile : AppCompatActivity() {
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.ic_social -> {
-                val intent = Intent(this, Social::class.java)
-                startActivity(intent)
-                return@OnNavigationItemSelectedListener true
-            }
 
         }
         false
 
     }
-
 }

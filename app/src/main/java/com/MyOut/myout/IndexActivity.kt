@@ -1,6 +1,8 @@
 package com.MyOut.myout
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.MyOut.myout.ui.Running
@@ -12,6 +14,8 @@ class IndexActivity : AppCompatActivity() {
 
     private val name = arrayOf("Push-Up","Squat", "Plank / Wall-sit", "Running")
 
+    lateinit var preferences: SharedPreferences
+
     private val image = arrayOf(R.drawable.pushup, R.drawable.squats, R.drawable.planks, R.drawable.running)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +23,9 @@ class IndexActivity : AppCompatActivity() {
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
+
+        preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+
 
 
 
@@ -62,11 +69,6 @@ class IndexActivity : AppCompatActivity() {
             }
             R.id.ic_profile -> {
                 val intent = Intent(this, Profile::class.java)
-                startActivity(intent)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.ic_social -> {
-                val intent = Intent(this, Social::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

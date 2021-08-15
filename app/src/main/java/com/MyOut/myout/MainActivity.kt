@@ -3,6 +3,7 @@ package com.MyOut.myout
 import android.app.*
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.widget.EditText
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity() {
     private val CHANNEL_ID = "channel_id_example_01"
     private val notificationId = 101
 
+    lateinit var sharedPreferences: SharedPreferences
+    var isRemembered = false
+
 /*    comm*/
 
 
@@ -35,6 +39,16 @@ class MainActivity : AppCompatActivity() {
 
         createNotificationChannel()
 
+
+        sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+
+        isRemembered = sharedPreferences.getBoolean("CHECKBOX", false)
+
+        if (isRemembered) {
+
+            startActivity(Intent(this, IndexActivity::class.java))
+        }
+
         btn_SignUp.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
@@ -43,6 +57,22 @@ class MainActivity : AppCompatActivity() {
         }
         btn_SignIn.setOnClickListener{
             doLogin()
+
+            val username: String = et_username.text.toString()
+            val password: String = et_password.text.toString()
+
+            val checked: Boolean = checkboxRemember.isChecked
+            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+            editor.putString("NAME", username)
+            editor.putString("PASSWORD", password)
+            editor.putBoolean("CHECKBOX", checked)
+            editor.apply()
+
+            Toast.makeText(this, "Information saved!", Toast.LENGTH_LONG).show()
+
+            startActivity(Intent(this, IndexActivity::class.java))
+            finish()
+
         }
 
          val alarmManager = this.getSystemService(ALARM_SERVICE) as AlarmManager
@@ -89,30 +119,32 @@ class MainActivity : AppCompatActivity() {
         signInEmail = et_username.text.toString().trim()
         signInPassword = et_password.text.toString().trim()
 
-        if (notEmpty()) {
-            firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
-                .addOnCompleteListener { signIn ->
-                    if (signIn.isSuccessful) {
-                        startActivity(Intent(this, IndexActivity::class.java))
-                        Toast.makeText(
-                            baseContext, "signed in successfully",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        finish()
-                    } else {
-                        Toast.makeText(
-                            baseContext, "Sign in failed. Try again",
-                            Toast.LENGTH_SHORT
-                        ).show()
+            if (notEmpty()) {
+                firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
+                        .addOnCompleteListener { signIn ->
+                            if (signIn.isSuccessful) {
+                                startActivity(Intent(this, IndexActivity::class.java))
+                                Toast.makeText(
+                                        baseContext, "signed in successfully",
+                                        Toast.LENGTH_SHORT
+                                ).show()
+                                finish()
+                            } else {
+                                Toast.makeText(
+                                        baseContext, "Sign in failed. Try again",
+                                        Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+            } else {
+                signInInputsArray.forEach { input ->
+                    if (input.text.toString().trim().isEmpty()) {
+                        input.error = "${input.hint} is required"
                     }
                 }
-        } else {
-            signInInputsArray.forEach { input ->
-                if (input.text.toString().trim().isEmpty()) {
-                    input.error = "${input.hint} is required"
-                }
             }
-        }
+
+
 
     }
 

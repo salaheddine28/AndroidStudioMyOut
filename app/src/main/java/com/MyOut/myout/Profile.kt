@@ -5,13 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.MyOut.myout.databinding.ActivityProfileBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -33,14 +30,12 @@ class Profile : AppCompatActivity() {
         loadProfile()
 
 
-        btn_Save.setOnClickListener {
+        btn_save.setOnClickListener {
             UpdateProfile()
         }
 
-        btn_Settings.setOnClickListener {
-            val intent = Intent(this, SettingsProfile::class.java)
-            startActivity(intent)
-            finish()
+        btn_ProfileSettings.setOnClickListener {
+            startActivity(Intent(this, Settings::class.java))
         }
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
@@ -113,11 +108,6 @@ class Profile : AppCompatActivity() {
             }
             R.id.ic_profile -> {
                 return@OnNavigationItemSelectedListener false
-            }
-            R.id.ic_social -> {
-                val intent = Intent(this, Social::class.java)
-                startActivity(intent)
-                return@OnNavigationItemSelectedListener true
             }
 
         }

@@ -53,9 +53,6 @@ class ChoosePlankWallSit : AppCompatActivity() {
             R.id.ic_profile -> {
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.ic_social -> {
-                return@OnNavigationItemSelectedListener true
-            }
 
         }
         false

@@ -314,11 +314,7 @@ class SquatDetail : AppCompatActivity() {
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.ic_social -> {
-                val intent = Intent(this, Social::class.java)
-                startActivity(intent)
-                return@OnNavigationItemSelectedListener true
-            }
+
 
         }
         false

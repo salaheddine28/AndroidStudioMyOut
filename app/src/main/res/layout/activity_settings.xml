@@ -4,74 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsProfile">
+    tools:context=".Settings">
+
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         />
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/white"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="5dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="20dp"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="16dp">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="salaheddine.zeroual@outlook.com"
-                android:gravity="center"
-                android:textColor="#363A43"
-                android:textColorHint="#7A8089"
-                android:padding="10dp"
-                />
-
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:padding="10dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/et_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="*****"
-                android:gravity="center"
-                android:textColor="#363A43"
-                android:textColorHint="#7A8089" />
-
-
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Save"
-                android:background="#007AAF"
-                android:textColor="@color/white"
-                />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview2"
@@ -159,19 +98,6 @@
 
     </androidx.cardview.widget.CardView>
 
-
-
-
-
-
-
-    <FrameLayout
-        android:id="@+id/fl_wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"
-        />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -181,6 +107,5 @@
         app:itemIconTint="#007AAF"
         app:itemTextColor="#007AAF"
         app:menu="@menu/bottom_navbar"/>
-
 
 </RelativeLayout>

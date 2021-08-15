@@ -8,28 +8,37 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:name="com.MyOut.myout.BaseApplication"
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyOut">
-        <activity android:name="com.MyOut.myout.InstructionsSquat"
-            android:theme="@style/NoActionBarTheme"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name="com.MyOut.myout.SquatDetail"
-            android:theme="@style/NoActionBarTheme"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".Settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme"></activity>
         <activity
-            android:name="com.MyOut.myout.WallSitDetail"
+            android:name=".ProfileSettings"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.PlankDetail"
+            android:name=".InstructionsSquat"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".SquatDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".WallSitDetail"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".PlankDetail"
             android:theme="@style/NoActionBarTheme" />
 
         <receiver
-            android:name="com.MyOut.myout.TimerNotificationActionReceiver"
+            android:name=".TimerNotificationActionReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
@@ -40,14 +49,14 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.MyOut.myout.TimerExpiredReceiver"
+            android:name=".TimerExpiredReceiver"
             android:enabled="true"
             android:exported="false" />
         <receiver
-            android:name="com.MyOut.myout.AlarmReceiver"
+            android:name=".AlarmReceiver"
             android:enabled="true" />
         <receiver
-            android:name="com.MyOut.myout.BootReceiver"
+            android:name=".BootReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -55,73 +64,68 @@
         </receiver>
 
         <activity
-            android:name="com.MyOut.myout.InstructionsPushUps"
+            android:name=".InstructionsPushUps"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.InstructionsPlank"
+            android:name=".InstructionsPlank"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.InstructionsWallSit"
+            android:name=".InstructionsWallSit"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.Squat"
+            android:name=".Squat"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.SignUp"
+            android:name=".SignUp"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.Charts"
+            android:name=".Charts"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.SettingsProfile"
+            android:name=".Social"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.Social"
+            android:name=".Profile"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.Profile"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme" />
-        <activity
-            android:name="com.MyOut.myout.ui.Running"
+            android:name=".ui.Running"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.WallSit"
+            android:name=".WallSit"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.Plank"
+            android:name=".Plank"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.ChoosePlankWallSit"
+            android:name=".ChoosePlankWallSit"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.PushUp"
+            android:name=".PushUp"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.PushUpDetail"
+            android:name=".PushUpDetail"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.IndexActivity"
+            android:name=".IndexActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme">
-        </activity>
+            android:theme="@style/NoActionBarTheme" />
         <activity
-            android:name="com.MyOut.myout.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme"
@@ -134,7 +138,7 @@
         </activity>
 
         <service
-            android:name="com.MyOut.myout.services.TrackingService"
+            android:name=".services.TrackingService"
             android:foregroundServiceType="location" />
 
         <meta-data

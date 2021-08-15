@@ -27,18 +27,6 @@
         android:layout_marginTop="10dp"
         />
 
-    <Button
-        android:id="@+id/btn_Settings"
-        android:layout_width="30dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:drawableStart="@drawable/ic_baseline_settings_24">
-
-
-    </Button>
 
 
 
@@ -113,28 +101,49 @@
                 android:layout_marginTop="30dp"
                 />
 
-            <Button
-                android:id="@+id/btn_Save"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Save"
-                android:background="#007AAF"
-                android:textColor="@color/white"
+                android:orientation="horizontal"
                 >
-            </Button>
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Save"
+                    android:width="150dp"
+                    android:background="#007AAF"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="15dp"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/btn_ProfileSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:width="150dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Profile settings"
+                    android:background="#007AAF"
+                    android:textColor="@color/white"
+                    >
+
+                </Button>
+            </LinearLayout>
+
+
+
+            <FrameLayout
+                android:id="@+id/fl_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-
-
-    <FrameLayout
-        android:id="@+id/fl_wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"
-        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

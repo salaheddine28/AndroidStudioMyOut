@@ -75,6 +75,13 @@
                 android:textColor="#363A43"
                 android:textColorHint="#7A8089" />
 
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remember me"
+                android:layout_marginTop="5dp"
+                android:id="@+id/checkboxRemember"/>
+
             <Button
                 android:id="@+id/btn_SignIn"
                 android:layout_width="match_parent"
