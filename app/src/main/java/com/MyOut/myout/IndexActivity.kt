@@ -37,19 +37,19 @@ class IndexActivity : AppCompatActivity() {
                 finish()
             }
 
-            if (position==2){
+            if (position==1){
                 val intent = Intent(this, SquatDetail::class.java)
                 startActivity(intent)
                 finish()
             }
 
-            if (position==3){
+            if (position==2){
                 val intent = Intent(this, ChoosePlankWallSit::class.java)
                 startActivity(intent)
                 finish()
             }
 
-            if (position==4){
+            if (position==3){
                 val intent = Intent(this, Running::class.java)
                 startActivity(intent)
                 finish()
