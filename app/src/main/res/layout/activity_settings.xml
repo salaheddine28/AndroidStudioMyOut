@@ -13,88 +13,63 @@
         />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview2"
+        android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:background="#F5F5F5"
+        android:background="@color/white"
         app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/bottom_navigation"
-        android:layout_marginBottom="100dp"
         >
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:padding="16dp">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
-                android:id="@+id/Music"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Music"
-                android:textColor="#363A43"
-                android:textColorHint="#7A8089"
-                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="About MyOut"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="We are 3 students studying IT in High school Odisee in Brussels. During this corona crisis it is difficult
+                     to workout at the gym, so we build an app to do your workouts at home. Hope you like it ! "
+                android:textColor="@color/black"
                 />
 
 
-            <TextView
-                android:padding="10dp"
-                android:id="@+id/Voice"
+            <Button
+                android:id="@+id/btn_Disconnect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Voice"
-                android:textColor="#363A43"
-                android:textColorHint="#7A8089" />
-
-            <TextView
-                android:id="@+id/Vibration"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Vibration"
-                android:textColor="#363A43"
-                android:textColorHint="#7A8089"
-                android:padding="10dp"
-                />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:text="Disconnect "
+                android:background="#007AAF"
+                android:textColor="@color/white"
                 >
+            </Button>
 
-                <Button
-                    android:id="@+id/btn_About"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="About"
-                    android:width="150dp"
-                    android:background="#007AAF"
-                    android:textColor="@color/white"
-                    android:layout_marginHorizontal="15dp"
-                    >
-                </Button>
-
-                <Button
-                    android:id="@+id/btn_Disconnect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:width="150dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Disconnect"
-                    android:background="#007AAF"
-                    android:textColor="@color/white"
-                    >
-
-                </Button>
-            </LinearLayout>
 
         </LinearLayout>
+
 
     </androidx.cardview.widget.CardView>
 
