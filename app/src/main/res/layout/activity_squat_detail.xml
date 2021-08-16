@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
                 android:gravity="center"
-                android:hint="number of pushups"
+                android:hint="number of squats"
                 android:padding="3dp"
                 android:textColor="#363A43"
                 android:textColorHint="#7A8089"
