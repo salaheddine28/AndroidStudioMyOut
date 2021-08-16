@@ -68,8 +68,7 @@ class MainActivity : AppCompatActivity() {
             editor.putBoolean("CHECKBOX", checked)
             editor.apply()
 
-            startActivity(Intent(this, IndexActivity::class.java))
-            finish()
+
 
         }
 
