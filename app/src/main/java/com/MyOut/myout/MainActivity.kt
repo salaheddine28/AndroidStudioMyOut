@@ -68,8 +68,6 @@ class MainActivity : AppCompatActivity() {
             editor.putBoolean("CHECKBOX", checked)
             editor.apply()
 
-            Toast.makeText(this, "Information saved!", Toast.LENGTH_LONG).show()
-
             startActivity(Intent(this, IndexActivity::class.java))
             finish()
 

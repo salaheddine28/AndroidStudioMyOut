@@ -19,10 +19,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme"></activity>
         <activity
-            android:name=".ProfileSettings"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarTheme" />
-        <activity
             android:name=".InstructionsSquat"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
