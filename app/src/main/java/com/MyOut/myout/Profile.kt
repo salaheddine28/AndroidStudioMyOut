@@ -30,10 +30,6 @@ class Profile : AppCompatActivity() {
         loadProfile()
 
 
-        btn_save.setOnClickListener {
-            UpdateProfile()
-        }
-
         btn_ProfileSettings.setOnClickListener {
             startActivity(Intent(this, Settings::class.java))
         }
@@ -43,23 +39,6 @@ class Profile : AppCompatActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBar)
 
 
-    }
-    private fun UpdateProfile(){
-
-        val db = FirebaseFirestore.getInstance()
-
-        val firstName = firstname.text.toString()
-        val lastName = lastname.text.toString()
-        val ht = height.text.toString()
-        val wt = weight.text.toString()
-
-        val user = hashMapOf(
-            "Firstname" to firstName,
-            "Lastname" to lastName,
-            "height" to ht,
-            "weight" to wt
-        )
-        db.collection("users").document(auth.currentUser!!.uid).set(user)
     }
 
     private fun loadProfile() {
@@ -78,10 +57,10 @@ class Profile : AppCompatActivity() {
                 if (document != null){
                     Log.d("Exist", "DocumentSnapchot data: ${document.data}")
 
-                    firstname.hint = document.getString("Firstname")
-                    lastname.hint = document.getString("Lastname")
-                    height.hint = document.getString("height")
-                    weight.hint = document.getString("weight")
+                    firstname.text = document.getString("Firstname")
+                    lastname.text = document.getString("Lastname")
+                    height.text = document.getString("height")
+                    weight.text = document.getString("weight")
                 }else {
                     Log.d("noexist", "No such document")
                 }

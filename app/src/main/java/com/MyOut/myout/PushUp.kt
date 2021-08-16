@@ -10,9 +10,12 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_push_up_detail.*
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat
 import java.util.*
 
 class PushUp : AppCompatActivity() {
@@ -21,7 +24,7 @@ class PushUp : AppCompatActivity() {
 
     private var mediaPlayer: MediaPlayer? = null
     private var mediaPlayerFinish: MediaPlayer? = null
-
+    private lateinit var auth: FirebaseAuth
 
 
     private var SetArray = arrayOf<Int>(1,1,1,1,1,1)
@@ -35,6 +38,7 @@ class PushUp : AppCompatActivity() {
     var started4 = false;
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_push_up)
@@ -44,6 +48,17 @@ class PushUp : AppCompatActivity() {
 
         mediaPlayer = MediaPlayer.create(this, R.raw.pushup_sound)
         mediaPlayerFinish = MediaPlayer.create(this, R.raw.finish)
+
+
+        auth = FirebaseAuth.getInstance()
+
+
+
+        val db = FirebaseFirestore.getInstance()
+
+
+
+
 
 
 
@@ -63,21 +78,28 @@ class PushUp : AppCompatActivity() {
         var s5 = numberList?.get(4).toString()
 
 
+        var totalPushU = 0
 
         if (noOfSets == 1)
         {
             SetArray[0] = s1.toInt()
+
+            totalPushU = SetArray[0]
         }
         if (noOfSets == 2)
         {
             SetArray[0] = s1.toInt()
             SetArray[1] = s2.toInt()
+
+            totalPushU = (SetArray[0] + SetArray[1] )
         }
         if (noOfSets == 3)
         {
             SetArray[0] = s1.toInt()
             SetArray[1] = s2.toInt()
             SetArray[2] = s3.toInt()
+
+            totalPushU = (SetArray[0] + SetArray[1] + SetArray[2] )
         }
         if (noOfSets == 4)
         {
@@ -85,6 +107,8 @@ class PushUp : AppCompatActivity() {
             SetArray[1] = s2.toInt()
             SetArray[2] = s3.toInt()
             SetArray[3] = s4.toInt()
+
+            totalPushU = (SetArray[0] + SetArray[1] + SetArray[2] + SetArray[3] )
         }
         if (noOfSets == 5)
         {
@@ -93,9 +117,23 @@ class PushUp : AppCompatActivity() {
             SetArray[2] = s3.toInt()
             SetArray[3] = s4.toInt()
             SetArray[4] = s5.toInt()
+
+            totalPushU = (SetArray[0] + SetArray[1] + SetArray[2] + SetArray[3] + SetArray[4])
         }
 
 
+
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val currentDate = sdf.format(Date())
+        val username = auth.currentUser!!.uid
+        val amountPushUps = totalPushU
+        val user = hashMapOf(
+            "Username" to username,
+            "AmountPushUps" to amountPushUps,
+            "datum" to currentDate
+        )
+
+        db.collection("pushUps").add(user)
         btn.text = SetArray[0].toString()
 
 
